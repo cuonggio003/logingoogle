@@ -24,18 +24,22 @@ class CreateNoteRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'name' => 'required',
             'content' => 'required',
-            'type' => 'required',
-           
+            'category' => 'required',
+            'date' => 'required',
+            
         ];
     }
 
     public function messages()
     {
         return [
-           
+            'name.required' =>'toi da 2 ki tu',
+            'content.required' =>'toi da 4 ki tu',
+            'category.required' =>'phai co',
             
+           
         ];
     }
 }

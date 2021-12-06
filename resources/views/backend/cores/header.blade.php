@@ -135,16 +135,16 @@
         </ul>
 
         <div class="avatar-dropdown" id="icon">
-            <span>Admin</span>
-            <img src="images/Icon_header.png">
+            <span>Note</span>
+            <img src="images/admin.jpg">
         </div>
        
         <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
             for="icon">
             <li class="mdl-list__item mdl-list__item--two-line">
                 <span class="mdl-list__item-primary-content">
-                    <span class="material-icons mdl-list__item-avatar"></span>
-                    <span>Admin</span>
+                    <span src="images/admin.jpg"></span>
+                    <span>Note</span>
                     <span class="mdl-list__item-sub-title">admin@gmail.com</span>
                 </span>
             </li>

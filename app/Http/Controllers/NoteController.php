@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CreateNoteRequest;
 
 class NoteController extends Controller
@@ -23,10 +24,13 @@ class NoteController extends Controller
 
     function store(CreateNoteRequest $request)
     {   
+    
         $note = new Note();
-        $note->title = $request->title;
+        $note->name = $request->name;
+       
         $note->content = $request->content;
-        $note->type = $request->type;
+        $note->category = $request->category;
+        $note->date = $request->date;
         $note->save();
         return redirect()->route('show.note');
     }
@@ -40,9 +44,10 @@ class NoteController extends Controller
 
     function editNote(Request $request, $id) {
         $note = Note::findOrFail($id);
-        $note->title = $request->title;
+        $note->name = $request->name;
         $note->content = $request->content;
-        $note->type = $request->type;
+        $note->category = $request->category;
+        $note->date= $request->date;
         $note->save();
         return redirect()->route('show.note');
     }
