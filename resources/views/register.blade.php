@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <form method="post" action="{{ route('auth.login') }}" class="box">
+                    <form method="post" action="{{ route('register') }}" class="box">
                         @csrf
                         <h1>Register</h1>
                         <p class="text-muted"> Please enter your login and password!</p> 
@@ -25,6 +25,8 @@
                         <input type="text" name="email" placeholder="Username" required> 
                         <input type="password" name="password" placeholder="Password" required> 
                         <input type="password" name="confirmspassword" placeholder="ConfirmsPassword" required> 
+                        <input type="text" name="provider_id" placeholder="provider_id" required> 
+                        <input type="text" name="provider" placeholder="provider" required> 
                         <input type="submit" onclick="okay" name="submit" value="Login">
                        
                         <div class="col-md-12">

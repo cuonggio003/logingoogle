@@ -10,7 +10,7 @@
                       
                       
                      
-                        <form action="" method="post">
+                        <form action="{{ route('change.password') }}" method="post">
                             @csrf
                             
                             <div class="input-group mb-3">

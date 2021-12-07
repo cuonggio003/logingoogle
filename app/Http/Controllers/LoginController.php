@@ -89,9 +89,11 @@ class LoginController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'provider_id'=>'required',
+            'provider' => 'required',
             
         ]);
-        $data = $request->only('name', 'email', 'password');
+        $data = $request->only('name', 'email', 'password', 'provider_id', 'provider'); 
         $data['password'] = Hash::make($request->password);
         $user = User::query()->create($data);
         $user->save();
