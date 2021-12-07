@@ -21,8 +21,8 @@
                         @csrf
                         <h1>Login</h1>
                         <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="email" placeholder="Username"> 
-                        <input type="password" name="password" placeholder="Password"> 
+                        <input type="text" name="email" placeholder="Username" required> 
+                        <input type="password" name="password" placeholder="Password" required> 
                         <a class="forgot text-muted" href="#">Forgot password?</a> 
                         <input type="submit" onclick="login" name="submit" value="Login">
                         <a class="forgot text-muted" href="{{ route('show.register') }}">Register an account</a>
