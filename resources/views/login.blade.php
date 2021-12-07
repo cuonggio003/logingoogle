@@ -25,7 +25,7 @@
                         <input type="password" name="password" placeholder="Password"> 
                         <a class="forgot text-muted" href="#">Forgot password?</a> 
                         <input type="submit" onclick="login" name="submit" value="Login">
-                        <a class="forgot text-muted" href="#">Register an account</a>
+                        <a class="forgot text-muted" href="{{ route('show.register') }}">Register an account</a>
                         <div class="col-md-12">
                             
                             <ul class="social-network social-circle">

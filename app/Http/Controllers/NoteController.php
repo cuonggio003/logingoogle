@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CreateNoteRequest;
 
-class NoteController extends Controller
+class NoteController extends Controller implements BaseInterface
 {
     function showNote()
     {

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+
 use App\Http\Services\LoginService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
@@ -51,5 +54,49 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+
+    public function showFormChangePassword(){
+        return view('change-password');
+    }
+
+    public function changePassword(Request $request){
+        $note = Auth::note();
+        $currentPassword = $note->password;
+        $request->validate([
+            'currentPassword' => 'required',
+            'newPassword' => 'required|min:3',
+            'confirmPassword' => 'required|same:newPassword',
+            
+        ]);
+        if(!Hash::check($request->currentPassword, $currentPassword)){
+            return redirect()->back()->withErrors(['currentPassword' => 'Sai Password hiện tại ']);
+        }
+        $note->password = Hash::make($request->newPassword);
+        $note->save();
+        return redirect()->route('show.note');
+
+    
+    }
+    public function showFormRegister()
+    {
+        return view('register');
+
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            
+        ]);
+        $data = $request->only('name', 'email', 'password');
+        $data['password'] = Hash::make($request->password);
+        $user = User::query()->create($data);
+        $user->save();
+        return redirect()->route('login');
+    }
+    
 
 }

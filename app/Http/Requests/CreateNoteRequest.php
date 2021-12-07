@@ -35,9 +35,9 @@ class CreateNoteRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' =>'toi da 2 ki tu',
-            'content.required' =>'toi da 4 ki tu',
-            'category.required' =>'phai co',
+            'name.required' =>'Ai cho ông để trống',
+            'content.required' =>'Ai cho ông để trống',
+            'category.required' =>'Ai cho ông để trống',
             
            
         ];

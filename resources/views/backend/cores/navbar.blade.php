@@ -15,7 +15,7 @@
                             <i class="material-icons"></i>
                         </a>
                     </div>
-                    <a class="mdl-navigation__link" href="ui-components.html">
+                    <a class="mdl-navigation__link" href="{{ route('show.note') }}">
                         <i class="material-icons">developer_board</i>
                         Components
                     </a>

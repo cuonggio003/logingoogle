@@ -19,13 +19,14 @@
                 <div class="card">
                     <form method="post" action="{{ route('auth.login') }}" class="box">
                         @csrf
-                        <h1>Login</h1>
+                        <h1>Register</h1>
                         <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="email" placeholder="Username"> 
-                        <input type="password" name="password" placeholder="Password"> 
-                        <a class="forgot text-muted" href="#">Forgot password?</a> 
-                        <input type="submit" onclick="login" name="submit" value="Login">
-                        <a class="forgot text-muted" href="#">Register an account</a>
+                        <input type="text" name="name" placeholder="Name" required> 
+                        <input type="text" name="email" placeholder="Username" required> 
+                        <input type="password" name="password" placeholder="Password" required> 
+                        <input type="password" name="confirmspassword" placeholder="ConfirmsPassword" required> 
+                        <input type="submit" onclick="okay" name="submit" value="Login">
+                       
                         <div class="col-md-12">
                             
                             <ul class="social-network social-circle">

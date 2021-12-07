@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\NoteAjaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,12 @@ use App\Http\Controllers\SocialController;
 
 Route::get('/', [LoginController::class, 'showFormLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('auth.login');
+Route::get('/register', [LoginController::class, 'showFormRegister'])->name('show.register');
+Route::post('/register', [LoginController::class,'register'])->name('register');
 
+
+Route::get('change-password', [LoginController::class, 'showFormChangePassword'])->name('change.form');
+Route::post('change-password', [LoginController::class, 'changePassword'])->name('change.password');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -33,6 +39,7 @@ Route::prefix('notes')->group( function(){
     Route::get('/{id}/delete', [NoteController::class, 'deleteNote'])->name('delete.note');
 });
 
+
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -40,4 +47,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirect']);
 
 Route::get('/callback/{provider}', [SocialController::class, 'callback']);
+
+
 

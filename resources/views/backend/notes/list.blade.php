@@ -1,13 +1,10 @@
 @extends('master')
 @section('content')
-
-
     <div class="main-container">
         <div class="xs-pd-20-10 pd-ltr-20">
             <div class="card mt-2">
                 <h5 class="card-header">Danh sách bản ghi
-                    
-                        <a class="btn btn-outline-warning" href="{{ route('create.note') }}">
+                    <a class="btn btn-outline-warning" href="{{ route('create.note') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">
                             <path
@@ -17,10 +14,8 @@
                                 d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z">
                             </path>
                         </svg>
-                        </a>
-                    
+                    </a>
                 </h5>
-
                 <div class="card-body">
                     <table class="table table-bordered">
                         <tr>
@@ -29,7 +24,6 @@
                             <th>Nội dung</th>
                             <th>Thể loại</th>
                             <th>Ngày ghi chú</th>
-
                         </tr>
                         @forelse($notes as $key => $note)
                             <tr id="note-item-{{ $note->id }}">
@@ -39,7 +33,6 @@
                                 <td>{{ $note->category }}</td>
                                 <td>{{ $note->date }}</td>
                                 <td>
-
                                     <a class="btn btn-outline-primary" href="{{ route('update.note', $note->id) }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                             class="bi bi-pen" viewBox="0 0 16 16">
@@ -60,9 +53,6 @@
                                             </path>
                                         </svg>
                                     </a>
-
-
-
                                 </td>
                             </tr>
                         @empty
@@ -75,8 +65,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 @endsection
